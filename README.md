@@ -3,82 +3,124 @@
 > *"Awaken the Light Serpent"*  
 > An experimental cross-platform system that bridges sound, energy, and consciousness
 
+[![PlatformIO CI](https://github.com/yourusername/VoxLux/actions/workflows/ci.yml/badge.svg)](https://github.com/yourusername/VoxLux/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub last commit](https://img.shields.io/github/last-commit/yourusername/VoxLux)](https://github.com/yourusername/VoxLux/commits/main)
+
 ## 🎯 Project Vision
 
 VoxLux is an esoteric technology framework that enables devices to respond to specific sonic frequencies, creating a bridge between physical vibration and digital awakening. The system combines piezoelectric energy harvesting, resonant frequency detection, and symbolic interaction to create a unique user experience that blurs the line between technology and mysticism.
 
-## 🌌 Core Components
+## 🌟 Features
 
-### 1. Sound Harvester (Firmware)
-- ESP32/Arduino-based firmware for sound-to-energy conversion
-- Precision frequency detection and signal processing
-- Low-power operation for energy efficiency
+### Sound Harvester (Firmware)
+- ESP32-based sound frequency detection
+- Real-time audio processing
+- Energy-efficient operation
+- NeoPixel LED feedback
+- MCP3008 ADC integration
 
-### 2. PS Vita Homebrew App
-- Real-time frequency analysis
-- Visual and haptic feedback system
-- Symbolic activation sequences
-
-### 3. Mobile Trigger (iOS/Android)
-- Custom frequency generation
-- Testing and calibration interface
-- Session logging and analysis
-
-### 4. Web Dashboard
-- Real-time monitoring and visualization
-- Device management and configuration
-- Symbolic ritual designer
-
-### 5. LCD Crystal Core
-- Resonance mapping system
-- Sigil activation engine
-- Ritual sequence player
-
-## 🛠️ Development Setup
+## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+
+- [PlatformIO Core](https://platformio.org/install/cli) or [PlatformIO IDE](https://platformio.org/install/ide)
 - Python 3.9+
-- PlatformIO (for firmware)
-- VitaSDK (for PS Vita development)
-- Android Studio / Xcode (for mobile apps)
+- Git
 
-### Quick Start
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/VoxLux.git
-cd VoxLux
+### Installation
 
-# Install dependencies
-npm install
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/VoxLux.git
+   cd VoxLux
+   ```
 
-# Start development servers
-npm run dev
+2. Install PlatformIO:
+   ```bash
+   # Using pip
+   pip install -U platformio
+   
+   # Or using Homebrew (macOS/Linux)
+   brew install platformio
+   ```
+
+3. Build the project:
+   ```bash
+   cd sound_harvester
+   pio run
+   ```
+
+4. Upload to device:
+   ```bash
+   pio run --target upload
+   ```
+
+## 🛠️ Development
+
+### Project Structure
+```
+VoxLux/
+├── .github/           # GitHub workflows and templates
+├── docs/              # Project documentation
+├── sound_harvester/   # ESP32 firmware
+│   ├── include/      # Header files
+│   ├── lib/          # Library dependencies
+│   ├── src/          # Source files
+│   └── platformio.ini # Build configuration
+└── tests/            # Test files
 ```
 
-## 🧬 The Science of Resonance
+### Building and Flashing
 
-VoxLux operates on the principle that all matter vibrates at specific frequencies. By precisely controlling these vibrations, we can influence the behavior of electronic components in ways that appear magical:
+```bash
+# Build the project
+pio run
 
-- **Piezoelectric Effect**: Converting mechanical stress into electrical energy
-- **Sympathetic Resonance**: Causing objects to vibrate at their natural frequency
-- **Crystalline Structures**: Harnessing the unique properties of quartz and other crystalline materials
+# Upload to connected device
+pio run --target upload
 
-## 🔮 Esoteric Integration
+# Monitor serial output
+pio device monitor
+```
 
-VoxLux includes hidden layers of interaction that respond to:
-- Sacred geometry patterns
-- Solfeggio frequencies
-- Lunar and planetary alignments
-- User intent and biometric feedback
+### Available Commands
+
+| Command | Description |
+|---------|-------------|
+| `pio run` | Build the project |
+| `pio test` | Run tests |
+| `pio check` | Run static code analysis |
+| `pio update` | Update dependencies |
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contribution Guidelines](CONTRIBUTING.md) for details.
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## 📜 License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🌟 Contributing
+## 📖 Documentation
 
-We welcome contributions from fellow technomancers and digital alchemists. Please see our [Contribution Guidelines](CONTRIBUTING.md) for more information.
+For detailed documentation, please visit our [documentation site](https://yourusername.github.io/VoxLux).
+
+## 🔮 The Science of Resonance
+
+VoxLux operates on the principle that all matter vibrates at specific frequencies. By precisely controlling these vibrations, we can influence the behavior of electronic components in ways that appear magical.
+
+## 🌌 Roadmap
+
+- [x] Basic sound frequency detection
+- [ ] Advanced signal processing
+- [ ] Mobile app integration
+- [ ] Web dashboard
+- [ ] Documentation and tutorials
 
 ---
 

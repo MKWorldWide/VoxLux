@@ -1,0 +1,74 @@
+name: PlatformIO CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+env:
+  PLATFORMIO_CI_SRC: "sound_harvester"
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          
+      - name: Install PlatformIO Core
+        run: |
+          python -m pip install --upgrade pip
+          pip install -U platformio
+          
+      - name: PlatformIO Core Info
+        run: pio --version
+        
+      - name: Cache PlatformIO packages
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.platformio/.cache
+            ~/.platformio/packages
+            ~/.platformio/platforms
+          key: ${{ runner.os }}-platformio-${{ hashFiles('**/platformio.ini') }}
+          restore-keys: |
+            ${{ runner.os }}-platformio-
+            
+      - name: Install dependencies
+        working-directory: ./sound_harvester
+        run: |
+          pio pkg update
+          pio pkg install
+          
+      - name: Compile
+        working-directory: ./sound_harvester
+        run: pio run
+        
+      - name: Run tests
+        working-directory: ./sound_harvester
+        run: pio test -e native
+        continue-on-error: true
+        
+      - name: Check code style
+        working-directory: ./sound_harvester
+        run: pio check --fail-on-defect=high --fail-on-defect=medium --fail-on-defect=low
+        continue-on-error: true
+        
+      - name: Save build artifacts
+        if: success() || failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: firmware
+          path: |
+            sound_harvester/.pio/build/**/*.bin
+            sound_harvester/.pio/build/**/*.elf
+            sound_harvester/.pio/build/**/*.hex
+          if-no-files-found: warn
+          retention-days: 5

@@ -1,64 +1,150 @@
-# Dependencies
-node_modules/
-.pnp
-.pnp.js
-
-# Testing
-coverage/
-
-# Production
-build/
-dist/
-
-# Misc
-.DS_Store
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# IDE
-.idea/
-.vscode/
-*.swp
-*.swo
-
-# PlatformIO
+# PlatformIO Core
 .pio/
 .pioenvs/
 .piolibdeps/
+.piolibdeps.ini
+.piolibdeps.json
+.piolibdeps.lock
+.piolibdeps.temp
+.piolibdeps.tmp
+.piolibdeps.tmp.ini
+.piolibdeps.tmp.json
+.piolibdeps.tmp.lock
+.piolibdeps.tmp.temp
+
+# PlatformIO Build Output
+.pio/build/
+.pio/libdeps/
+.pio/test/
+.pio/check/
+.pio/lint/
+.pio/coverage/
+.pio/debug/
+.pio/upload/
+.pio/remote/
+.pio/share/
+
+# PlatformIO IDE
+.vscode/
+.idea/
+*.sublime-*
+*.sublime-project
+*.sublime-workspace
 
 # Python
 __pycache__/
 *.py[cod]
 *$py.class
-
-# Mobile
-*.apk
-*.aab
-*.ipa
-*.xcarchive
-*.dSYM
-
-# PS Vita
-*.velf
-*.vpk
-*.self
 *.so
-*.prx
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
-# Local development
-.vercel
-.next
-out/
+# Virtual Environment
+venv/
+ENV/
+env/
+.env
+.venv
 
-# Debug logs
+# Node.js
+node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Build output
+build/
+dist/
+*.hex
+*.bin
+*.elf
+*.o
+*.d
+*.a
+*.so
+*.dylib
+*.lib
+*.dll
+*.exe
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# Local development files
+*.local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Testing
+coverage/
+htmlcov/
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Documentation
+docs/_build/
+docs/api/
+
+# Local development server
+.local/
+
+# Project specific ignores
+sound_harvester/.pio/
+sound_harvester/.pioenvs/
+sound_harvester/.piolibdeps/
+
+# Local development environment files
+.env
+.env.*
+!.env.example
